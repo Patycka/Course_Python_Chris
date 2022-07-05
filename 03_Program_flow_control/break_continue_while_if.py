@@ -40,7 +40,15 @@ for i in range(1, 21):
 # hashtags, use continue
 
 hashtag_str = "#Python#is#simple#language"
+str_no_hash = ""
+lst_no_hash = []
 for j in hashtag_str:
     if j == "#":
         continue
-    print(j, end="")
+    str_no_hash += j
+
+lst_no_hash = hashtag_str.split("#")
+print(str_no_hash)
+print(lst_no_hash[1:])
+
+

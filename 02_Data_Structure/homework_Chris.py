@@ -266,3 +266,21 @@ and be right-aligned).
 
 Shortcut of the function logic: check how many twos, threes, fourse, etc.
 """
+
+import random
+
+def dice(num):
+    sum_numbers = sum([random.randint(1, 6) for _ in range(num)])
+    return sum_numbers
+
+def print_histogram(throws):
+    hashtag = "#"
+    dict_12 = {k : "" for k in range(2, 13)}
+    for i in range(throws):
+        result = dice(2)
+        dict_12[result] += "#"
+    for k, v in dict_12.items():
+        print(f"{k}: {v}")
+
+
+print(print_histogram(100))

@@ -31,4 +31,24 @@ for i in range(10):
 
 # Task 1. Use for loop generate 20 numbers (range), print only (numbers divided by two), use continue
 
-# Task 2. hasztags = '#Python#is#simple#language' create new string variable which includes the same name but without hashtags, use continue
+for i in range(1, 21):
+    if i % 2 == 1:
+        continue
+    print("Numbers divided by two:", i)
+
+# Task 2. hasztags = '#Python#is#simple#language' create new string variable which includes the same name but without
+# hashtags, use continue
+
+hashtag_str = "#Python#is#simple#language"
+str_no_hash = ""
+lst_no_hash = []
+for j in hashtag_str:
+    if j == "#":
+        continue
+    str_no_hash += j
+
+lst_no_hash = hashtag_str.split("#")
+print(str_no_hash)
+print(lst_no_hash[1:])
+
+

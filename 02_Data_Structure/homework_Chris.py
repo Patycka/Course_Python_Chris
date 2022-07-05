@@ -14,14 +14,10 @@ lst = [[5, 7, 11, 2, 3, 1],
 
 print(lst[0])
 
-# for row in lst:
-#     for i in row:
 
 [print(lst[index_row][1]) for index_row in range(len(lst))]
 for index_row in range(len(lst)):
     print(lst[index_row][1])
-    # for index_column in range(len(lst[index_row])):
-    #     print(lst[index_row][1])
 
 print(lst[0][1])
 print(lst[1][1])
@@ -59,14 +55,11 @@ and the value set as a square of the key. Print dictionary at the end.
 
 even_list = dict([(i, i**2) for i in range(0, 20) if i % 2 == 0])
 print(even_list)
-# squared_list = [n ** 2 for n in even_list]
-#
-# # Zip returns tuple
+
+# Zip returns tuple
 # dict_num = dict(zip(even_list, squared_list))
 # print(f'dict_num {dict_num}')
 
-# or even better through regular expression, but I'm not sure how:
-# 0 0 2 4
 
 """
 Write a function 'message', which takes as an argument a dictionary
@@ -87,7 +80,7 @@ cinema_dict = {
     "movie": ["First Knight", "Pirates of the Caribbean", "Cleopatra"],
     "year": ["1995", "2003", "1963"]
 }
-#print(cinema_dict)
+
 def message(some_dict):
     name_list_1, name_list_2, name_list_3 = [],[], []
     for i in some_dict.values():
@@ -98,9 +91,6 @@ def message(some_dict):
     return f"In {name_list_1[2]}, {name_list_1[0]} is a {name_list_1[1]}.", f"In {name_list_2[2]}, {name_list_2[0]} is a {name_list_2[1]}.", f"In {name_list_3[2]}, {name_list_3[0]} is a {name_list_3[1]}."
 
 
-
-
-#message(cinema_dict)
 print(message(cinema_dict))
 
 
@@ -122,60 +112,6 @@ def get_most_frequent_letter(text):
 
 
 get_most_frequent_letter("In First Knight")
-
-# str_list = [i.lower() for i in input().split()]
-# alpha_list = []
-# dict_alpha = {}
-# max_alpha = []
-# count_lst = []
-# print(str_list)
-#
-# for word in str_list:
-#     for alpha in word:
-#         if alpha.isalpha():
-#             alpha_list.append(alpha)
-# #print(alpha_list)
-#
-# bob = 0
-# #print(dict_alpha.fromkeys(alpha_list))
-# some_alpha = alpha_list[-1]
-# for i in alpha_list:
-#     counter = alpha_list.count(i)
-#     if i == some_alpha and counter > 1:
-#         some_alpha = i
-#         bob += 1
-# print(some_alpha, bob)
-#
-# --> the most repitable letter
-# ________
-#
-
-# -------
-# Using dictionary - doesn't work
-# str_list = [i.upper() for i in input().split()]
-# alpha_list = []
-# dict_alpha = {}
-# max_alpha = []
-# count_lst = []
-# print(str_list)
-#
-# for word in str_list:
-#     for alpha in word:
-#         if alpha.isalpha():
-#             alpha_list.append(alpha)
-# print(alpha_list)
-#
-#
-# for i in alpha_list:
-#     counter = alpha_list.count(i)
-#     if counter > 1:
-#         max_a = max_alpha.append(i)
-#         #print(max_a)
-#         count_lst.append(counter)
-#         #print(type(count_lst))
-#         dict_alpha = dict(zip(alpha_list, count_lst))
-#         print(dict_alpha)
-# ____
 
 
 # #Solution with lists:
@@ -199,27 +135,26 @@ get_most_frequent_letter("In First Knight")
 #         result = [alpha, counter]
 #         print(*result)
 
-#_______________________________
 
-# final version with dictionary that really works
-# str_list = [i.upper() for i in input().split()]
-# alpha_list = []
-# dict_alpha = {}
-# max_alpha = []
-# count_lst = []
-#
-# for word in str_list:
-#     for alpha in word:
-#         if alpha.isalpha():
-#             alpha_list.append(alpha)
-# print(alpha_list)
-#
-# for item in alpha_list:
-#     dict_alpha[item] = dict_alpha.get(item, 0) + 1
-#
-# final_dict = {element: count for element, count in dict_alpha.items() if count > 1}
-# print(final_dict)
-# In First Knight, Sean Connery is a King Arthur.
+# Final version with dictionary that really works
+str_list = [i.upper() for i in input().split()]
+alpha_list = []
+dict_alpha = {}
+max_alpha = []
+count_lst = []
+
+for word in str_list:
+    for alpha in word:
+        if alpha.isalpha():
+            alpha_list.append(alpha)
+print(alpha_list)
+
+for item in alpha_list:
+    dict_alpha[item] = dict_alpha.get(item, 0) + 1
+
+final_dict = {element: count for element, count in dict_alpha.items() if count > 1}
+print(final_dict)
+#In First Knight, Sean Connery is a King Arthur.
 
 
 
@@ -228,17 +163,19 @@ Write a function dice(num), which simulates a roll with a 6-side dice. Argument 
 is a number of dice to throw. The function should return the sum of the dice.
 '''
 import random
-#
+
 def dice(num):
-    sum_1 = 0
-    # #result = []
-    # for _ in range(num):
-    #     sum_1 += random.randint(1, 6)
+
     sum_numbers = sum([random.randint(1, 6) for _ in range(num)])
     print(f"sum of numbers: {sum_numbers}")
-    #return sum_1
-# x = [int(input(i)) for i in range(num)]
-# print(x)
+
+# 2nd solution
+#sum_1 = 0
+    # result = []
+    # for _ in range(num):
+    #     sum_1 += random.randint(1, 6)
+    # return sum_1
+
 
 dice(5)
 

@@ -36,3 +36,43 @@ with open('mapa.txt', 'r') as file:
     num_str = line.strip().split(" ")
     sum_num = [int(i) for i in num_str]
     print(sum(sum_num))
+
+num = 12345
+product = 1
+while num != 0:
+    last_digit = num % 10
+    product = product * last_digit
+    num = num // 10
+print(product)
+
+num = 123456789
+total = 0
+while num != 0:
+    last_digit = num % 10
+    if last_digit > 4:
+        total += 1
+    num = num // 10
+print(total)
+
+# to write some info in books.txt and read it
+with open("books.txt", "w") as file:
+    my_text = "The books for summer:\n'The Glass Bead Game'\n'Orientalism'\n'Social Psychology'"
+    lines = file.writelines(my_text)
+
+with open("books.txt", "r") as f:
+    lines1 = f.readlines()
+    lines1 = "".join(lines1) #  "because the lines1" is list
+    print(lines1)
+
+
+# To add items to the book list
+
+additional_list = "\nQuo Vadis\nPan Tadeusz"
+
+f = open('books.txt', 'a')
+f.write(additional_list)
+"""
+with open("books.txt", "a") as file:
+    l = f.write(additional_list)
+# ValueError: I/O operation on closed file.
+"""

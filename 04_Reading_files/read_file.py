@@ -67,7 +67,7 @@ with open("books.txt", "r") as f:
 
 # To add items to the book list
 
-additional_list = "\nQuo Vadis\nPan Tadeusz"
+additional_list = "\n'Quo Vadis'\n'Pan Tadeusz'"
 
 f = open('books.txt', 'a')
 f.write(additional_list)

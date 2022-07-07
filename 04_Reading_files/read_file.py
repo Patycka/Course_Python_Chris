@@ -21,11 +21,10 @@ with open('test.txt', 'r') as file:
 # Change the elements of the list "lines" so that they don't contain newlines.
 with open('test.txt', 'r') as file:
     lines = file.readlines()
-    for line in lines:
-        line = line.strip()
-        print(line, end=" ")
+    for index in range(len(lines)):
+        lines[index] = lines[index].strip()
 
-print(" ", end="\n")
+print(lines)
 
 # Task 2.
 # Read the file mapa.txt. try to sum numbers which are in the first line.
@@ -71,8 +70,8 @@ additional_list = "\n'Quo Vadis'\n'Pan Tadeusz'"
 
 f = open('books.txt', 'a')
 f.write(additional_list)
-"""
+f.close()
+
 with open("books.txt", "a") as file:
-    l = f.write(additional_list)
+    l = file.write(additional_list)
 # ValueError: I/O operation on closed file.
-"""

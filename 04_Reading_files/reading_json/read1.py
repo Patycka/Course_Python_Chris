@@ -44,7 +44,23 @@ if response.status_code == 200:
     print("Success")
 
 data_server1 = response.json()
-print(data_server1)
+#print(data_server1)
+
+
+
+id_list = []
+name_list = []
+
+for dictionary in data_server1:
+    #print(dictionary)
+   # print(row["id"])
+    dict_user = dictionary["user"]
+    print(dict_user["id"])
+
+    #for i in row["user"]:
+     #   print(i)
+      #  #print(i["id"])
+       # break
 
 
 
@@ -77,9 +93,4 @@ with open("deniro.csv", newline="") as csvfile:
 
 
 
-
-some_lst = [["s", 7, "&"], ["n", 2, "*"], ["c", 6, "%"]]
-print(some_lst)
-some_lst.sort()
-print(some_lst)
 

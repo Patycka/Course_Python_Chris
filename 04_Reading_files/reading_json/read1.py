@@ -1,7 +1,7 @@
 import requests
 
 try:
-    response = requests.get('https://www.ciach.net/python/job.45942941.json', auth = ("python", "test"))
+    response = requests.get('https://www.ciach.net/python/job.45942941.json', auth=("python", "test"))
 except:
     print("error 404")
 
@@ -33,5 +33,53 @@ print(get_nested_value("user", "name"))
 # Output of the script should be 2 lists, one with values of the 'id' key and
 # the second one, with the values of the 'name' key.
 
+print("\n-----------\n")
+
+try:
+    response = requests.get('https://www.ciach.net/python/jobs.json', auth=("python", "test"))
+except:
+    print("error 404")
+
+if response.status_code == 200:
+    print("Success")
+
+data_server1 = response.json()
+print(data_server1)
+
+
+
 # Task 1.
 # Find the library to read excel file in python and try to read example excel file.
+
+import csv
+
+with open("deniro.csv", newline="") as csvfile:
+    reader = csv.reader(
+        csvfile,
+        delimiter=",",
+        quotechar='"',
+        quoting=csv.QUOTE_ALL,
+        skipinitialspace=True,
+    )
+    print("\nThe csv file:\n")
+    print(type(reader))
+    list_2 = []
+    for row in reader:
+        list_2.append(row)
+        print(' - '.join(row))
+
+    for item in list_2[1:]:
+        for j in item[0:2]:
+            int(j)
+        #print(item.sort(key=item[1]))
+
+    #list_2.sort(key=list_2[1])
+
+
+
+
+some_lst = [["s", 7, "&"], ["n", 2, "*"], ["c", 6, "%"]]
+print(some_lst)
+some_lst.sort()
+print(some_lst)
+

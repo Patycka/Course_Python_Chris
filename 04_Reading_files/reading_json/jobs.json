@@ -3,7 +3,7 @@
         "id":47528138,
         "status":"running",
         "stage":"test",
-        r,
+        "name":"server-integration-normal-test",
         "ref":"refs/merge-requests/3418/head",
         "tag":false,
         "coverage":null,
